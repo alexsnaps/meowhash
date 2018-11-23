@@ -2,7 +2,7 @@ require 'test/unit'
 require 'meowhash'
 
 class TestMeowHash < Test::Unit::TestCase
-  def test_verison
+  def test_version
     assert MeowHash::Hasher.version() == "v0.4"
   end
 
