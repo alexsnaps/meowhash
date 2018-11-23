@@ -6,8 +6,16 @@ class TestMeowHash < Test::Unit::TestCase
     assert MeowHash::Hasher.version() == "v0.4"
   end
 
-  def test_hasher
+  def test_digest
     assert_equal("0591045C3C3F33B515D7D2E366FBF082".downcase, MeowHash::Hasher.digest("toto").each_byte.map { |b| b.to_s(16).rjust(2,'0') }.join)
+  end
+
+  def test_hexdigest
+    assert_equal("0591045C3C3F33B515D7D2E366FBF082".downcase, MeowHash::Hasher.hexdigest("toto"))
+  end
+
+  def test_base64digest
+    assert_equal("BZEEXDw/M7UV19LjZvvwgg==", MeowHash::Hasher.base64digest("toto"))
   end
 
   def test_raises_on_non_string
