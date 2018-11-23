@@ -45,4 +45,7 @@ Init_meowhash()
 
   rb_define_module_function(cHasher, "version", rb_meow_version, 0);
   rb_define_module_function(cHasher, "digest", rb_meow_hash, 1);
+
+  // todo
+  // rb_define_module_function(cHasher, "file", rb_meow_file, 1)
 }
