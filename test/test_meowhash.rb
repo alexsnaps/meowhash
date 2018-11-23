@@ -15,4 +15,14 @@ class TestMeowHash < Test::Unit::TestCase
       MeowHash::Hasher.hash(42)
     end
   end
+
+  def test_meow_hash_version
+    file = File.open("ext/meowhash/meow_hash.h", "rb")
+    assert_equal("9F177F35D31536CDE904FF01EE0E9A72".downcase, MeowHash::Hasher.hash(file.read).each_byte.map { |b| b.to_s(16).rjust(2,'0') }.join)
+  end
+
+  def test_meow_intrinsics_version
+    file = File.open("ext/meowhash/meow_intrinsics.h", "rb")
+    assert_equal("B6F0D59805A037BFFC13AF959E08CC92".downcase, MeowHash::Hasher.hash(file.read).each_byte.map { |b| b.to_s(16).rjust(2,'0') }.join)
+  end
 end

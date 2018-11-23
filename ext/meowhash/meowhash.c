@@ -13,7 +13,7 @@ rb_meow_version(int argc, VALUE *argv, VALUE klass)
   return rb_sprintf("v%s", VERSION);
 }
 
-void 
+static void 
 to_chars(unsigned long n, unsigned char *bytes)
 {
   bytes[0] = (n >> 24) & 0xFF;
