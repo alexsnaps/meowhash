@@ -44,5 +44,5 @@ Init_meowhash()
   VALUE cHasher = rb_define_module_under(mMH, "Hasher");
 
   rb_define_module_function(cHasher, "version", rb_meow_version, 0);
-  rb_define_module_function(cHasher, "hash", rb_meow_hash, 1);
+  rb_define_module_function(cHasher, "digest", rb_meow_hash, 1);
 }
